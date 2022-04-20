@@ -11,7 +11,7 @@ def lambda_handler(event, context):
             "Content-Type": "application/json"
         },
         "body": json.dumps({
-            "Requests status code": res.status_code,
+            "Requests_status_code": res.status_code,
             "Requests body": res.text
         })
     }
