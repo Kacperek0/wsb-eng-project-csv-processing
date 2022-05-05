@@ -25,6 +25,7 @@ def parse_csv_mbank(lines):
 
     return result
 
+  
 def lambda_handler(event, context):
     """Receive file from S3 bucket, process it and return a JSON file to S3 bucket."""
     print(event)
