@@ -21,8 +21,8 @@ def parse_csv_mbank(lines):
             line = line.split(';')
             result.append({
                 'date': line[0],
-                'description': line[1],
-                'category': line[3],
+                'description': line[1].strip('"\\ '),
+                'category': line[3].strip('"\\ '),
                 'amount': line[4]
             })
         except IndexError:
