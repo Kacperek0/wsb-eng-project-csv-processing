@@ -52,7 +52,15 @@ def lambda_handler(event, context):
         print(f'Error getting object {key} from bucket {bucket}.')
         raise e
 
+    transactions = {
+        'transactions': result,
+    }
+
+    transactions = json.dumps(transactions)
+
+    s3.put_object(bucket='wsb-eng-ptransactions-bucket', Key='transactions.json', Body=transactions)
     print(json.dumps(result))
+
 
     return {
         "statusCode": 200,
