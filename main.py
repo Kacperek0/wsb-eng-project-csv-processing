@@ -58,7 +58,7 @@ def lambda_handler(event, context):
 
     transactions = json.dumps(transactions)
 
-    s3.put_object(bucket='wsb-eng-ptransactions-bucket', Key='transactions.json', Body=transactions)
+    s3.put_object(bucket='wsb-eng-transactions-bucket', Key='transactions.json', Body=transactions)
     print(json.dumps(result))
 
 
